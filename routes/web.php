@@ -32,4 +32,6 @@ Route::get('/', function () {
    return redirect()->route('contact');
 })->name('home');
 
-Route::view('/contact', 'contact', ['name' => 'Boris'])->name('contact');
+//Route::view('/contact', 'contact', ['name' => 'Boris'])->name('contact');
+//Route::get('/contact', 'ContactController@index');
+Route::get('/contact', 'ContactController@post');
