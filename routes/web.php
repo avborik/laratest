@@ -11,6 +11,25 @@
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('/', function () {
+//     return view('contact');
+// });
+
+// Route::view('/contact', 'contact', ['name' => 'Boris']);
+
+// //Route::redirect('/', '/contact');
+
+// Route::get('/user/{name}/{id}',function($name,$id){
+//     return 'i am '.$name.' and my ID is '.$id ;
+// });
+
 Route::get('/', function () {
-    return view('welcome');
-});
+   // return "Hello guys";
+   return redirect()->route('contact');
+})->name('home');
+
+Route::view('/contact', 'contact', ['name' => 'Boris'])->name('contact');
