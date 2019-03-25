@@ -27,11 +27,31 @@
 //     return 'i am '.$name.' and my ID is '.$id ;
 // });
 
-Route::get('/', function () {
-   // return "Hello guys";
-   return redirect()->route('contact');
-})->name('home');
+// 
 
 //Route::view('/contact', 'contact', ['name' => 'Boris'])->name('contact');
-//Route::get('/contact', 'ContactController@index');
-Route::get('/contact', 'ContactController@post');
+//Route::get('/contact/{name}', 'ContactController@index');
+//Route::get('/contact', 'ContactController@post');
+
+// Route::resources([
+//     'contact'=> 'ContactController',
+//     'user'=> 'UserController'
+// ]);
+
+// Route::resource('contact', 'ContactController')->only([
+//     'index','show'
+// ]);
+
+//Route::resource('user', 'UserController');
+
+// Route::resource('contact', 'ContactController')->exept([
+//     'create','store','update','destroy'
+// ]);
+
+Route::resource('contact', 'ContactController')->except([
+    'create','store','update','destroy'
+])->names([
+    'edit'=>'contact.superawesome'
+]);
+
+Route::get('/contact/{user}/{age}/{name}','ContactController@espec');

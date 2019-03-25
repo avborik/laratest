@@ -4,30 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ContactController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    // public function index($name)
-    // {
-    //     return view('contact',['name'=> $name]);
-    // }
-
-    // public function clown($name)
-    // {
-    //     return view('contact',['name'=> $name]);
-    // }
-
-     public function index()
-     {
-         //return view('contact',['name'=> $name]);
-         return view('contact', ["name"=> "Boris"]);
-
-         
-     }
+    public function index()
+    {
+        return view('user');
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -56,9 +43,9 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($name)
+    public function show($id)
     {
-        return view('contact', [ 'name' => $name]);
+        //
     }
 
     /**
