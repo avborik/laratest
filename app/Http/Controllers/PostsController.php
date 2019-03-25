@@ -4,30 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ContactController extends Controller
+class PostsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    // public function index($name)
-    // {
-    //     return view('contact',['name'=> $name]);
-    // }
+    public function index()
+    {
+        $code = 'super1234';
+        //$color = 'Green';
+        $color = 'red';
+        $cars = ['Ford', 'Nissan', 'VW'];
+        $hobbies = ['Coding', 'Skating', 'Running'];
+       // $hobbies = '';
 
-    // public function clown($name)
-    // {
-    //     return view('contact',['name'=> $name]);
-    // }
-
-     public function index()
-     {
-         //return view('contact',['name'=> $name]);
-         return view('contact', ["name"=> "Boris"]);
-
-         
-     }
+        // return view('posts', ['code'=>'super1234', 'color'=>'Green']);
+        return view('posts', compact('code','color','cars','hobbies'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -56,9 +51,9 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($name)
+    public function show($id)
     {
-        return view('contact', [ 'name' => $name]);
+        //
     }
 
     /**

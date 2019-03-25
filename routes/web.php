@@ -48,10 +48,13 @@
 //     'create','store','update','destroy'
 // ]);
 
-Route::resource('contact', 'ContactController')->except([
-    'create','store','update','destroy'
-])->names([
-    'edit'=>'contact.superawesome'
-]);
+// Route::resource('contact', 'ContactController')->except([
+//     'create','store','update','destroy'
+// ])->names([
+//     'edit'=>'contact.superawesome'
+// ]);
 
-Route::get('/contact/{user}/{age}/{name}','ContactController@espec');
+// Route::get('/contact/{user}/{age}/{name}','ContactController@espec');
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/posts', 'PostsController@index')->name('posts');
