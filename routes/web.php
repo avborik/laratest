@@ -1,5 +1,7 @@
 <?php
 
+use App\Post;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,3 +60,10 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/posts', 'PostsController@index')->name('posts');
+
+Route::get('/posts/{id}',function($id){
+    //return 'Hey Pandas';
+    //$posts = Post::all();
+    $post = Post::find($id);
+    return $post;
+});

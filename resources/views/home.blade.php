@@ -1,11 +1,11 @@
 @extends('layout.app')
 
 
-@section('appContent')
+{{-- @section('appContent')
     Bearka at home
     {{-- @component('layout.welcome')
     <strong>
         $$$gold$$$
-    </strong> --}}
+    </strong> 
 @endcomponent
-@stop
+@stop --}}
