@@ -13,4 +13,7 @@ class Post extends Model
     // protected $fillable = [
     //     'title', 'body', 'votes', 'is_admin'
     // ];
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
 }

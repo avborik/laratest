@@ -120,3 +120,7 @@ use App\User;
 Route::get('/user/{id}',function($id){
     return User::find($id)->post;
 });
+
+Route::get('/post/{id}',function($id){
+    return Post::find($id)->user->email;
+});
