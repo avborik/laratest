@@ -84,7 +84,34 @@ Route::get('/posts/{id}',function($id){
     // $posts->save();
    // return $post;
 
-   $posts = Post::where('is_admin', 1)->update([
-       'votes' => 100
-   ]);
+//    $posts = Post::where('is_admin', 1)->update([
+//        'votes' => 100
+//    ]);
+    // Post::create([
+    //     'title' => 'Mass assignment 2',
+    //     'body' => 'content fake',
+    //     'votes' => 99,
+    //     'is admin' => 1
+    // ]);
+
+    //post deleting
+    // $post = Post::find(10);
+    // $post->delete();
+    // return $post;
+
+    // Post::destroy(8);
+   //Post::destroy(8);
+
+   //soft delete
+
+//    $post = Post::withTrashed()->get();
+//    return $post;
+// $post = Post::onlyTrashed()->get();
+// return $post;
+
+$post = Post::onlyTrashed()
+        ->where('id', 4)
+        ->forceDelete();
+return $post;
+   // $post->delete();
 });
