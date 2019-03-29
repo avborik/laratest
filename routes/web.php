@@ -1,6 +1,7 @@
 <?php
 
 use App\Post;
+use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -115,3 +116,7 @@ use App\Post;
 // return $post;
    // $post->delete();
 // });
+
+Route::get('/user/{id}',function($id){
+    return User::find($id)->post;
+});
