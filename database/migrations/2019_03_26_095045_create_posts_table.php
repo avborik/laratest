@@ -15,12 +15,14 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->integer('xxx_id')->unsigned();
             $table->string('title', 150)->unique();
             $table->longtext('body');
-            $table->integer('rating');
-            $table->boolean('visible');
-            $table->integer('is_admin')->nullable();
-            $table->softDeletes();
+          //  $table->integer('rating');
+          //  $table->boolean('visible');
+         //   $table->integer('is_admin')->nullable();
+          //  $table->softDeletes();
             $table->timestamps();
         });
     }

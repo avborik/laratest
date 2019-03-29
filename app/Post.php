@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
-    use SoftDeletes;
+    // use SoftDeletes;
 
-    protected $dates = ['deleted_at'];
-    protected $fillable = [
-        'title', 'body', 'votes', 'is_admin'
-    ];
+    // protected $dates = ['deleted_at'];
+    // protected $fillable = [
+    //     'title', 'body', 'votes', 'is_admin'
+    // ];
 }

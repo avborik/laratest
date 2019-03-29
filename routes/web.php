@@ -58,10 +58,10 @@ use App\Post;
 
 // Route::get('/contact/{user}/{age}/{name}','ContactController@espec');
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/posts', 'PostsController@index')->name('posts');
+// Route::get('/', 'HomeController@index')->name('home');
+// Route::get('/posts', 'PostsController@index')->name('posts');
 
-Route::get('/posts/{id}',function($id){
+// Route::get('/posts/{id}',function($id){
     //return 'Hey Pandas';
     //$posts = Post::all();
     // $post = Post::find($id);
@@ -109,9 +109,9 @@ Route::get('/posts/{id}',function($id){
 // $post = Post::onlyTrashed()->get();
 // return $post;
 
-$post = Post::onlyTrashed()
-        ->where('id', 4)
-        ->forceDelete();
-return $post;
+// $post = Post::onlyTrashed()
+//         ->where('id', 4)
+//         ->forceDelete();
+// return $post;
    // $post->delete();
-});
+// });
