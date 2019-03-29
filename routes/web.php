@@ -118,7 +118,8 @@ use App\User;
 // });
 
 Route::get('/user/{id}',function($id){
-    return User::find($id)->post;
+   // return User::find($id)->post;
+   return User::find($id)->posts;
 });
 
 Route::get('/post/{id}',function($id){
