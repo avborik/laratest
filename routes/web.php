@@ -2,6 +2,7 @@
 
 use App\Post;
 use App\User;
+use App\Video;
 use App\Country;
 
 /*
@@ -146,10 +147,22 @@ use App\Country;
 //    // return $country;
 // });
 // one to one polymorphic
-Route::get('/user/image', function(){
-    return User::find(1)->image;
+// Route::get('/user/image', function(){
+//     return User::find(1)->image;
+// });
+
+// Route::get('/post/image', function(){
+//     return Post::find(1)->image;
+// });
+// many to many polymorphic
+Route::get('/post/tag',function(){
+    $post = Post::find(1)->tags;
+
+    return $post;
 });
 
-Route::get('/post/image', function(){
-    return Post::find(1)->image;
+Route::get('/video/tag',function(){
+     $video = Video::find(1)->tags;
+
+        return $video;
 });
