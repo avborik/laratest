@@ -138,10 +138,18 @@ use App\Country;
 // });
 
 // Has many through
-Route::get('/user/{id}/country',function($id){
-    $country = Country::find($id);
-    foreach($country->posts as $post){
-        echo $post->title.'<br/>';
-    }
-   // return $country;
+// Route::get('/user/{id}/country',function($id){
+//     $country = Country::find($id);
+//     foreach($country->posts as $post){
+//         echo $post->title.'<br/>';
+//     }
+//    // return $country;
+// });
+// one to one polymorphic
+Route::get('/user/image', function(){
+    return User::find(1)->image;
+});
+
+Route::get('/post/image', function(){
+    return Post::find(1)->image;
 });

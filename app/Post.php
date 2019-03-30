@@ -13,7 +13,11 @@ class Post extends Model
     // protected $fillable = [
     //     'title', 'body', 'votes', 'is_admin'
     // ];
-    public function user(){
-        return $this->belongsTo('App\User');
+    // public function user(){
+    //     return $this->belongsTo('App\User');
+    // }
+    public function image(){
+        return $this->morphMany('App\image','imageable');
     }
+
 }
