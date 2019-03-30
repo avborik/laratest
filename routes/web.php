@@ -117,11 +117,21 @@ use App\User;
    // $post->delete();
 // });
 
-Route::get('/user/{id}',function($id){
-   // return User::find($id)->post;
-   return User::find($id)->posts;
-});
+// Route::get('/user/{id}',function($id){
+//    // return User::find($id)->post;
+//    return User::find($id)->posts;
+// });
 
-Route::get('/post/{id}',function($id){
-    return Post::find($id)->user->email;
+// Route::get('/post/{id}',function($id){
+//     return Post::find($id)->user->email;
+// });
+// Many to many
+Route::get('/user/{id}/role',function($id){
+    $user = User::find($id);
+
+    foreach($user->roles as $user_role){
+        echo $user_role->name;
+    }
+
+    //return User::find($id)->roles;
 });
