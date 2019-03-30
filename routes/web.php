@@ -1,5 +1,6 @@
 <?php
 
+use App\Tag;
 use App\Post;
 use App\User;
 use App\Video;
@@ -155,14 +156,24 @@ use App\Country;
 //     return Post::find(1)->image;
 // });
 // many to many polymorphic
-Route::get('/post/tag',function(){
-    $post = Post::find(1)->tags;
+// Route::get('/post/tag',function(){
+//     $post = Post::find(1)->tags;
 
+//     return $post;
+// });
+
+// Route::get('/video/tag',function(){
+//      $video = Video::find(1)->tags;
+
+//         return $video;
+// });
+// Polymorphic many to many reverse
+Route::get('/tag/post',function(){
+    $post = Tag::find(1)->posts;
     return $post;
 });
 
-Route::get('/video/tag',function(){
-     $video = Video::find(1)->tags;
-
-        return $video;
+Route::get('/tag/videos',function(){
+    $post = Tag::find(1)->videos;
+    return $post;
 });
