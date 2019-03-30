@@ -2,6 +2,7 @@
 
 use App\Post;
 use App\User;
+use App\Country;
 
 /*
 |--------------------------------------------------------------------------
@@ -126,12 +127,21 @@ use App\User;
 //     return Post::find($id)->user->email;
 // });
 // Many to many
-Route::get('/user/{id}/role',function($id){
-    $user = User::find($id);
+// Route::get('/user/{id}/role',function($id){
+//     $user = User::find($id);
 
-    foreach($user->roles as $user_role){
-        echo $user_role->name;
+//     foreach($user->roles as $user_role){
+//         echo $user_role->name;
+//     }
+
+//     //return User::find($id)->roles;
+// });
+
+// Has many through
+Route::get('/user/{id}/country',function($id){
+    $country = Country::find($id);
+    foreach($country->posts as $post){
+        echo $post->title.'<br/>';
     }
-
-    //return User::find($id)->roles;
+   // return $country;
 });
