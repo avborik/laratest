@@ -46,6 +46,11 @@ class PostsController extends Controller
         
         // Post::create($input);
 
+        $validateData = $request->validate([
+            'title_form' => 'required',
+            'body_form' => 'required' 
+        ]);
+
         $post = new Post;
 
         $post-> title = $request-> title_form;
