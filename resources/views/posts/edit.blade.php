@@ -29,5 +29,12 @@
             @csrf
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        <br>
+        <form method="POST" action="/posts/{{ $post->id }}">
+            @method('DELETE')
+            @csrf
+
+            <button type="submit" class="btn btn-danger">Delete post</button>
+        </form>
     </div>
 @stop
