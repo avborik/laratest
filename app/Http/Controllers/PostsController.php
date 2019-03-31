@@ -14,9 +14,9 @@ class PostsController extends Controller
      */
     public function index()
     {
-       
+       $posts = Post::all();
         // return view('posts', ['code'=>'super1234', 'color'=>'Green']);
-        return view('posts.index');
+        return view('posts.index', compact('posts'));
     }
 
     /**

@@ -4,7 +4,7 @@ header {
     border-bottom: 2px solid #d5d5d5;
     padding: 20px 20px;
     text-align: center;
-}
+} 
 
 
 footer {
@@ -15,4 +15,10 @@ footer {
 
 .content {
     min-height: 400px;
+}
+
+.logo{
+    font-family: 'Righteous', cursive;
+    font-size: 30px;
+    color: #F44336;
 }

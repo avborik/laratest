@@ -1,5 +1,5 @@
 @extends('layout.app')
-
+ 
 
 {{-- @section('appContent')
     Bearka at home
