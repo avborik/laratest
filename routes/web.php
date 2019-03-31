@@ -13,9 +13,16 @@ use App\User;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'HomeController@index');
+// Route::get('/admin',function(){
+//     return 'Hello admin';
+// })->middleware('auth');
 
-Route::group(['middleware'=>'web'], function(){
-    Route::resource('/posts', 'PostsController');
+Route::get('/admin','AdminController@index')->name('admin');
+
+Route::get('/', function(){
+    return 'This is Bears home';
 });
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
