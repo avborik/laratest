@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +14,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+       // $date = date("Y/m/d");
+       //$date = Carbon::now();
+    //    $date = Carbon::now()->toFormattedDateString();
+    //$date = Carbon::now()->toTimeString();
+    // $date = Carbon::now()->addDays(5)->toFormattedDateString();
+    // $date = Carbon::now()->subDays(5)->toFormattedDateString();
+   // $date = Carbon::now()->subMonths(5)->toFormattedDateString();
+//    $date = Carbon::now()->tomorrow()->toFormattedDateString();
+        $date = Carbon::now()->addMonths(5)->diffForHumans();
+        return view('home',['date'=> $date]);
     }
 
     /**
