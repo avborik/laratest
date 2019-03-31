@@ -7,5 +7,23 @@
 @endpush --}}
 
 @section('appContent')
-    CREATE OF POST
+    <div>
+        <br><br>
+        <form action="/posts" method="POST">
+            <div class="form-group">
+                <label for="title_form">Title</label>
+                <input type="text" value="" class="form-control" id="title_form"
+                 name="title" placeholder="Enter the title">
+            </div>
+            <div class="form-group">
+                <label for="body_form">Body</label>
+                <textarea class="form-control" id="content_form" name="body" 
+                id="content_form" rows="3"></textarea>
+            </div>
+
+            {{-- {{csrf_field()}} --}}
+            @csrf
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 @stop
