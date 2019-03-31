@@ -25,9 +25,7 @@ class PostFormRequest extends FormRequest
     {
         return [
             'title_form' => 'required|max:15',
-            'body_form' => 'required',
-            'number_form' => 'numeric',
-            'check_form' => 'accepted' 
+            'body_form' => 'required'
         ];
     }
 }
