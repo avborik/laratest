@@ -13,15 +13,9 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $code = 'super1234';
-        //$color = 'Green';
-        $color = 'red';
-        $cars = ['Ford', 'Nissan', 'VW'];
-        $hobbies = ['Coding', 'Skating', 'Running'];
-       // $hobbies = '';
-
+       
         // return view('posts', ['code'=>'super1234', 'color'=>'Green']);
-        return view('posts', compact('code','color','cars','hobbies'));
+        return view('posts.index');
     }
 
     /**
