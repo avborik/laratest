@@ -20,7 +20,9 @@ use Illuminate\Http\Request;
 
 Route::get('/admin','AdminController@index')->name('admin');
 
-Route::get('/', function(Request $request){
+Route::get('/',['middleware'=>'awesome',function(){
+    return 'Nothing for Bears';
+}]);
 //     $request->session()->put('Mode','Awesome');
 //    $request->session()->put('Days',['1','2','3']);
 //    $request->session()->put('Mode','SuperAwesome');
@@ -31,9 +33,10 @@ Route::get('/', function(Request $request){
 // session(['Days'=>['x']]);
    //$request->session()->flash('Gretting','Hello guys');
   // $request->session()->reflash();
-   $request->session()->keep(['Gretting']);
-    return $request->session()->all();
-});
+//    $request->session()->keep(['Gretting']);
+//     return $request->session()->all();
+//return 'Nothing for Bears';
+//});
 
 Auth::routes();
 
