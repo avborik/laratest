@@ -21,9 +21,9 @@ class IsAdminMiddleware
 
         if($user){
             if(User::find($user->id)->role->name == 'administrator'){
-                return redirect('/admin/dasboard');
-            }else{
                 return $next($request);
+            } else{
+                return redirect('/home');
             }
         }else{
             return $next($request);

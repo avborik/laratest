@@ -25,9 +25,9 @@ Route::get('/admin','AdminController@index')->name('admin');
 //    return $user;
 
 // });
-Route::get('/admin',['middleware'=>'isAdmin', function(){
-    return redirect('/home');
-}]);
+// Route::get('/admin',['middleware'=>'isAdmin', function(){
+//     return redirect('/home');
+// }]);
 //     $request->session()->put('Mode','Awesome');
 //    $request->session()->put('Days',['1','2','3']);
 //    $request->session()->put('Mode','SuperAwesome');
@@ -42,6 +42,19 @@ Route::get('/admin',['middleware'=>'isAdmin', function(){
 //     return $request->session()->all();
 //return 'Nothing for Bears';
 //});
+
+// Route::middleware(['isAdmin'])->group(function(){
+    
+//     Route::get('/admin',function(){
+//         return redirect('/home');
+//     });
+
+//     Route::get('/admin/dashboard',function(){
+//       return redirect('/home');
+//   });
+// });
+
+Route::resource('/admin','AdminController');
 
 Auth::routes();
 
