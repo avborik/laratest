@@ -28,8 +28,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function role(){
-        return $this->belongsTo('App\Role');
+    public function posts(){
+        return $this->hasMany('App\Post');
     }
 
 }
