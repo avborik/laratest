@@ -20,8 +20,13 @@ use Illuminate\Http\Request;
 
 Route::get('/admin','AdminController@index')->name('admin');
 
-Route::get('/',['middleware'=>'awesome',function(){
-    return 'Nothing for Bears';
+// Route::get('/',function(){
+//    $user = Auth::user();
+//    return $user;
+
+// });
+Route::get('/admin',['middleware'=>'isAdmin', function(){
+    return redirect('/home');
 }]);
 //     $request->session()->put('Mode','Awesome');
 //    $request->session()->put('Days',['1','2','3']);
