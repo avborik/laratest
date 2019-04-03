@@ -53,11 +53,11 @@ Route::get('/admin','AdminController@index')->name('admin');
 //       return redirect('/home');
 //   });
 // });
-Route::get('/posts',function(){
-    $posts = User::find(1)->posts;
-    return $posts;
-});
-
+// Route::get('/posts',function(){
+//     $posts = User::find(1)->posts;
+//     return $posts;
+// });
+Route::resource('/posts', 'PostController');
 Route::resource('/admin','AdminController');
 
 Auth::routes();
