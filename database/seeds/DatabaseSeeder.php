@@ -13,10 +13,10 @@ class DatabaseSeeder extends Seeder
     {
         // factory(App\User::class,30)->create();
         // factory(App\Post::class,10)->create();
-        factory(App\User::class,10)->create()->each(function($user){
+        factory(App\User::class,300)->create()->each(function($user){
                 $user->posts()->save(factory(App\Post::class)->make());
         });
-        factory(App\Photo::class,30)->create();
+        factory(App\Photo::class,300)->create();
        // $this->call(PostTableSeeder::class);
     }
 }
