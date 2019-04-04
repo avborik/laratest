@@ -34,7 +34,17 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->all();
+        $validateData = $request->validate(['file' => 'required|mimes:pdf']);
+
+        $input = $request->all();
+
+        if($file = $request->file('file')){
+            $name = time().$file->getClientOriginalName();
+            $file->move('post_images',$name);
+
+            $input['path'] = $name;
+        }
+        return $input;
     }
 
     /**
